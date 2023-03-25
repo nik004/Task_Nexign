@@ -1,6 +1,7 @@
-package org.example;
+package data.base.subscribers;
 
-import java.util.ArrayList;
+import data.base.tariff.TariffCode;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package org.example;
+package data.base.tariff;
 
 public enum TariffCode {
     _03,

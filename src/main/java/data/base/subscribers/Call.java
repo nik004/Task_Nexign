@@ -1,4 +1,6 @@
-package org.example;
+package data.base.subscribers;
+
+import data.base.tariff.TariffCode;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -26,6 +28,7 @@ public class Call {
         return timeBegin;
     }
 
+
     public Date GetTimeEnd(){
         return timeEnd;
     }
@@ -41,11 +44,12 @@ public class Call {
     TariffCode GetTariffCode(){
         return tariffCode;
     }
-    TypeCall GetType(){
+
+    public TypeCall GetTypeCall(){
         return type;
     }
 
-    String GetTypeCode (){
+    public String GetTypeCode (){
         switch (type){
             case OUT: return "01";
             case IN:  return "02";
@@ -60,7 +64,7 @@ public class Call {
         //!!!!! throw new RuntimeException("Duration is negative");
     }
 
-    String DurationToString() {
+    public String DurationToString() {
         long secs = getDuration();
         long hour = secs / 3600,
                 min = secs / 60 % 60,

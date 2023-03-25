@@ -1,4 +1,8 @@
-package org.example;
+package data.base.tariff;
+
+import data.base.subscribers.Call;
+import data.base.subscribers.CallWithCost;
+import data.base.subscribers.TypeCall;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +28,7 @@ public class Tariff_11 extends Tariff {
         List<CallWithCost> listcost = new ArrayList<>();
         if (list.isEmpty()) return listcost;
         for (Call call : list) {
-            if (call.type == TypeCall.IN){
+            if (call.GetTypeCall() == TypeCall.IN){
                 cost = 0;
             }
             else{

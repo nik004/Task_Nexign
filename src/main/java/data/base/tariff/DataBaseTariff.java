@@ -1,12 +1,15 @@
-package org.example;
+package data.base.tariff;
+
+import data.base.subscribers.Call;
+import data.base.subscribers.CallWithCost;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class DatabaseTariff {
-    private HashMap<TariffCode,Tariff> dataBaseTariff;
+public class DataBaseTariff {
+    private HashMap<TariffCode, Tariff> dataBaseTariff;
 
-    DatabaseTariff(){
+    public DataBaseTariff(){
         dataBaseTariff = new HashMap<>();
         dataBaseTariff.put(TariffCode._03, new Tariff_03());
         dataBaseTariff.put(TariffCode._06, new Tariff_06());
@@ -18,15 +21,15 @@ public class DatabaseTariff {
         return dataBaseTariff.get(tCode);
     }
 
-    String GetNameTariff (TariffCode tCode){
+    public String GetNameTariff (TariffCode tCode){
         return dataBaseTariff.get(tCode).GetName();
     }
 
-    double GetFixCostForTariff (TariffCode tCode){
+    public double GetFixCostForTariff (TariffCode tCode){
         return dataBaseTariff.get(tCode).GetFixCost();
     }
 
-    List<CallWithCost> CalculateUseTariff(TariffCode tCode, List<Call> list){
+    public List<CallWithCost> CalculateUseTariff(TariffCode tCode, List<Call> list){
         return  GetTariff(tCode).CalculateCost(list);
     }
 

@@ -1,4 +1,7 @@
-package org.example;
+package data.base.tariff;
+
+import data.base.subscribers.Call;
+import data.base.subscribers.CallWithCost;
 
 import java.util.List;
 
