@@ -8,12 +8,16 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Subscriber {
-    String number;
-    CallsLog callsLog;
+    private String number;
+    private CallsLog callsLog;
 
     Subscriber (String number){
         this.number = number;
         this.callsLog = new CallsLog();
+    }
+
+    public void AddCall (Call call){
+        callsLog.Add(call);
     }
 
     List<Call> GetCalls(){
@@ -23,7 +27,7 @@ public class Subscriber {
     List<Call> MakeSortListForTariff( TariffCode tariffCode){
 
         List<Call> lCalls = GetCalls().stream()
-                .filter(e -> e.tariffCode == tariffCode)
+                .filter(e -> e.GetTariffCode() == tariffCode)
                 .sorted((o1,o2)-> o1.GetTimeBegin().compareTo(o2.GetTimeBegin()))
                 .collect(Collectors.toList());
 

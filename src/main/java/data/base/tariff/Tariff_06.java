@@ -9,16 +9,12 @@ import java.util.List;
 public class Tariff_06 extends Tariff {
 
     Tariff_06(){
-        name = "06";
-        code = TariffCode._06;
-        fixCost = 100;
-        fixTime = 300;
-        priceMinute = 1;
+        super("06",TariffCode._06,100,300,1);
     }
 
     List<CallWithCost> CalculateCost(List<Call> list){
-        double _fixTime = fixTime;
-        double _priceMinute = priceMinute;
+        double _fixTime = GetFixTime();
+        double _priceMinute = GetPriceMinute();
         double cost;
 
         List<CallWithCost> listCost = new ArrayList<>();

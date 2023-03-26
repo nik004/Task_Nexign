@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CallsLog {
-
-    List<Call> calls;
-
-
+    private List<Call> calls;
     CallsLog(){
         calls = new ArrayList<>();
     }

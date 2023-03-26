@@ -6,11 +6,20 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Call {
-    TypeCall type;
-    TariffCode tariffCode;
-    Date timeBegin;
-    Date timeEnd;
-    long duration;
+    private TypeCall type;
+    private TariffCode tariffCode;
+    private Date timeBegin;
+    private Date timeEnd;
+    private long duration;
+
+    //Call(TypeCall _call, TariffCode _tariffCode,Date _timeBegin,Date _timeEnd)
+    Call (Call call){
+        this.type = call.type;
+        this.tariffCode = call.tariffCode;
+        this.timeBegin = call.timeBegin;
+        this.timeEnd = call.timeEnd;
+        this.duration = call.duration;
+    }
 
 
     Call(String str_type,String str_tariff, String str_timeBegin,String str_timeEnd){
